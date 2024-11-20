@@ -22,7 +22,7 @@ async function convertToPDF(sourceFilePath: string, outputFolderPath: string, co
         const source = (await fs.readFile(sourceFilePath, 'utf-8')).trim();
         console.log(source)
         const pdf = await pdflatex(source, { shellEscape: true });
-        const outputfilePath = path.join(outputFolderPath, `${companyName}.pdf`);
+        const outputfilePath = path.join(outputFolderPath + companyName + '/', `${companyName}.pdf`);
         await fs.writeFile(outputfilePath, pdf);
         console.log(`PDF successfully saved to: ${outputfilePath}`);
     } catch (error) {
