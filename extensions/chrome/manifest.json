@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Jobber",
+    "version": "1.0",
+    "description": "AI powered Jobber",
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icons/om.jpg",
+            "48": "icons/om.jpg",
+            "128": "icons/om.jpg"
+        }
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "host_permissions": [
+        "http://localhost:4000/*"
+    ],
+    "permissions": [
+        "activeTab",
+        "storage",
+        "contextMenus",
+        "scripting",
+        "http://localhost:4000/*"
+    ]
+}

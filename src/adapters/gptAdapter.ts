@@ -13,9 +13,10 @@ export class GPTAdapter {
         try {
             const response = await axios.post(this.baseUrl, data, {
                 headers: { 'Content-Type': 'application/json' },
+                timeout: 100000, // Set timeout to 10 seconds (10000 ms)
             });
 
-            console.log(response.data.text);
+            console.log("Response from gpt is", response.data);
 
             if (response.data != undefined) {
                 // Load HTML response into cheerio

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Color Changer</title>
+    <style>
+        body {
+            width: 200px;
+            padding: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        #healthIndicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px auto;
+            display: block;
+            background-color: grey;
+            /* Default color */
+        }
+    </style>
+    <script defer src="popup.js"></script>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td> <span id="healthIndicator" title="Checking server health..."></span> </td>
+            <td> <span id="healthStatus"></span> </td>
+        </tr>
+    </table>
+
+    <p id="company">No company saved yet</p>
+    <p id="jobTitle">No title saved yet.</p>
+    <p id="jobDescription">No description saved yet.</p>
+    <button id="generateButton">Generate CL</button>
+    <button id="generateSkillButton">Generate Skills</button>
+</body>
+
+</html>
