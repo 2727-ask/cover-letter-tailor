@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { GPTService } from '../services/gpt.service';
-import { saveLatex, convertToPDF, removeExtraSpaces, readTextFile } from '../latextUtils';
+import { saveLatex, convertToPDF, removeExtraSpaces, readTextFile, convertLatexToPdf } from '../latextUtils';
 import dotenv from 'dotenv';
 import * as fs from 'node:fs/promises';
 import { addRecordToExcel } from '../excelUtils';
@@ -36,7 +36,7 @@ async function getCoverLetterContext(
         for a ${jobRole} at the organisation ${companyName}. Please provide your response in under ${noOfWords} words.
         This is my current resume: <Start of resume> ${resume} </End of resume>
         Here is the job description for the job I'm applying for: <Job Description> ${jobDescription} </Job Description>
-        Follow the latex format given bellow
+        Follow the latex format given below.  Important! If you want to highlight some thing use \textbf{} in lattex and not **bold text**.
         
         documentclass[11pt]{article}
 usepackage[margin=1in]{geometry}
@@ -49,7 +49,7 @@ textbf{Ashutosh Kumbhar} <linebreakhere>
 Tempe, Arizona, USA <linebreakhere>
 +1 623-698-7433 <linebreakhere>
 akumbha3@asu.edu <linebreakhere>
-linkedin.com/in/ashutosh-kumbhar <linebreakhere>
+https://ashutosh.us <linebreakhere>
 github.com/2727-ask <linebreakhere>
 <todays date here>
 end{flushleft}
@@ -72,6 +72,10 @@ end{document}
     return removeExtraSpaces(context);
 }
 
+function getCLOutputFile(companyName: string): string {
+    return `${process.env.CLDIRPATH || ''}${removeExtraSpaces(companyName)}/${removeExtraSpaces(companyName)}-ashutosh-kumbhar-cl.pdf`;
+}
+
 /**
  * Controller function to handle requests for generating a cover letter.
  * @param req - Express request object.
@@ -92,7 +96,10 @@ export const clController = async (req: Request, res: Response): Promise<void> =
 
         const generatedContent = await gptService.getCodeFromResponse({ text: context });
 
-        if (!generatedContent) {
+        console.log("GPT CONTENT ", generatedContent);
+        
+        
+        if (generatedContent == undefined) {
             console.error("Failed to generate cover letter content.");
             res.status(500).json({ error: true, message: 'Error generating cover letter content.' });
             return;
@@ -102,12 +109,12 @@ export const clController = async (req: Request, res: Response): Promise<void> =
         const outputPath = await saveLatex(generatedContent, sanitizedCompanyName);
 
         if (outputPath) {
-            const outputPDFPath = await convertToPDF(outputPath, process.env.CLDIRPATH || '/', sanitizedCompanyName);
+            const outputPDFPath = await convertLatexToPdf(outputPath, getCLOutputFile(sanitizedCompanyName));
             console.log(`Cover letter successfully saved and converted to PDF: ${outputPath}`);
             addRecordToExcel(process.env.EXCELPATH || '/', {
                 name: companyName,
                 jd,
-                cl: outputPDFPath || 'Failed',
+                cl: getCLOutputFile(sanitizedCompanyName) || 'Failed',
                 dateApplied: Date.now().toString(),// Use ISO format for date
                 isEmailed: false,
                 isLinkedIn: false,

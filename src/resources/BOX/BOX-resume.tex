@@ -1,0 +1,211 @@
+%-------------------------
+% Resume in Latex
+% Author : Ashutosh Kumbhar
+% Based off of: https://github.com/2727-ask
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+
+\begin{center}
+    \textbf{\Huge \scshape Ashutosh Kumbhar} \\ \vspace{1pt}
+    \small +1 6236987433 $|$ \href{mailto:akumbha3@asu.edu}{\underline{akumbha3@asu.edu}} $|$ 
+    \href{https://github.com/2727-ask}{\underline{github.com/2727-ask}} $|$
+    \href{https://ashutosh.us}{\underline{ashutosh.us}} $|$
+    \small Tempe, AZ, USA
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Arizona State University}{Tempe, AZ}
+      {Master of Software Engineering}{Aug. 2024 -- May 2026}
+    \resumeSubheading
+      {Savitribai Phule University}{Pune, India}
+      {Bachelor of Engineering in Computer Science}{Aug. 2019 -- May 2023}
+  \resumeSubHeadingListEnd
+  
+%-----------PROGRAMMING SKILLS-----------
+
+\section{Technical Skills}
+\resumeSubHeadingListStart
+  \resumeSubItem{\textbf{Languages:} C, C++, Java, Python, Dart, Go, JavaScript, Rust, HTML5, PHP, Scala}
+  \resumeSubItem{\textbf{Frameworks:} Angular, ReactJS, Vue.js, Django, Flask, Express.js, Electron.js, Tauri, Flutter, Ionic, Spring Boot}
+  \resumeSubItem{\textbf{Technologies:} Docker, Kubernetes, REST, JSON, TypeScript, GenAI, Selenium, BS4, FastAPI, AI, Machine Learning}
+  \resumeSubItem{\textbf{Developer Tools:} Git, GraphQL, Docker, Google Cloud Platform, Amazon Web Services, Firecracker, Kubernetes, Redis, Agile, SCRUM, Linux, JIRA, CI/CD, Jenkins}
+  \resumeSubItem{\textbf{Database:} MongoDB, PostgreSQL, Oracle, MySQL, Firebase, SQLite}
+  \resumeSubItem{\textbf{Software Development Practices:} Test-Driven Development, Agile Methodology, Code Review, Pair Programming}
+  \resumeSubItem{\textbf{Soft Skills:} Collaboration, Problem-Solving, Communication, Leadership, Mentorship, Personal Branding}
+  \resumeSubItem{\textbf{Cloud Platforms:} AWS, GCP, Azure}
+  \resumeSubItem{\textbf{Version Control:} Git, GitHub, GitLab}
+  \resumeSubItem{\textbf{AI & Data Science:} Deep Learning, Natural Language Processing, Data Analytics, AI-driven Content Management}
+\resumeSubHeadingListEnd
+%-------------------------------------------
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Software Engineer - Western Union}{May. 2023 -- Aug 2024}
+      {Western Union}{Full-Time}
+      \resumeItemListStart
+        \resumeItem{Contributed to developing and maintaining the Western Union POS retail application, ensuring seamless
+functionality and performance.}
+        \resumeItem{Developed \textbf{Point Of Sale Development Utility}, which boosted developer \textbf{efficiency by 70\%}}
+        \resumeItem{Collaborated in the migration of \textbf{WUPOS} from Apache Tapestry to Angular 14, and Microservices-based architecture resulting in \textbf{a 15\% increase in revenue}, significant improvements in both agent and user experience, and \textbf{expanded market share} through modernized front-end architecture.}
+        \resumeItem{Executed a Test-Driven Development (TDD) strategy within teams using the \textbf{Playwright} framework.}
+      \resumeItemListEnd
+
+     \resumeSubheading
+      {Software Engineer Intern - Amazon Web Services}{January 2021 -- May 2023}
+      {LinkCode Technologies}{Internship}
+      \resumeItemListStart
+        \resumeItem{Designed the architecture for the LinkCode LMS, driving the organization's digital transformation and resulting in a \textbf{35\% increase in revenue}.}
+        \resumeItem{Managed a team of \textbf{10 developers}, overseeing the collective development and implementation of the software.}
+        \resumeItem{Migrated the entire infrastructure to a server-less architecture using AWS \textbf{Lambda}, enhancing scalability and cost-efficiency.}
+        \resumeItem{Implemented \textbf{Web-RTC} for video conferencing, improving real-time communication capabilities.}
+        \resumeItem{Established CI/CD pipelines with Jenkins, optimizing development workflows and deployment processes.}
+      \resumeItemListEnd
+      
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+  {\textbf{Online Compiler Web IDE} $|$ \emph{Docker, Kubernetes, Redis, Node.js, Angular, Nginx}}{}
+\resumeItemListStart
+  \resumeItem{Developed a cloud-based platform supporting over 10+ programming languages, enabling software developers and students to perform heavy computation without local hardware.}
+  \resumeItem{Collaborated with a team to design a highly scalable architecture leveraging containerization technologies like Docker and Kubernetes.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{Diagnostic Center Resource Management System} $|$ \emph{Vue.js, Electron.js, Firebase, Google Cloud}}{}
+\resumeItemListStart
+  \resumeItem{Designed and implemented a web application to manage resources and patient data, boosting productivity by \textbf{80\%} for the Unique Diagnostic Center.}
+  \resumeItem{Integrated Firebase for real-time data synchronization and GCP for cloud-based resource scaling, improving performance and availability.}
+\resumeItemListEnd
+
+\resumeProjectHeading
+  {\textbf{Instagram Video Scraper + Auto YouTube Shorts Uploader} $|$ \emph{Selenium, BS4, Flutter, FastAPI, GenAI}}{}
+\resumeItemListStart
+  \resumeItem{Developed a Python script to automatically scrape Instagram videos while scrolling through reels using Selenium and BeautifulSoup.}
+  \resumeItem{Automated the uploading of videos to YouTube, including generating video tags and metadata using GenAI for improved search visibility.}
+\resumeItemListEnd
+      
+
+
+          
+    \resumeSubHeadingListEnd
+
+
+
+
+
+%
+
+\end{document}

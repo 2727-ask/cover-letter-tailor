@@ -1,7 +1,8 @@
 import { Request, Response } from 'express';
-import { saveLatex, convertToPDF, removeExtraSpaces, readTextFile } from '../latextUtils';
+import { saveLatex, convertToPDF, removeExtraSpaces, readTextFile, convertLatexToPdf } from '../latextUtils';
 import dotenv from 'dotenv';
 import * as fs from 'node:fs/promises';
+import * as path from 'path';
 import { GPTService } from '../services/gpt.service';
 
 dotenv.config();
@@ -12,15 +13,16 @@ async function getSkillContext(jd: string): Promise<string> {
     const context = `
         Read the following job description and identify the skills that are required for this job.
         Add the identified key skills to conquer this job and add it to the below JSON file.
+        For example: If you find any termnology like 3-d graphics or machine learning, add the skills related like (Blender, RNN, CNN, Pandas) to that terminology.
         Following is the job description: <JOB DESCRIPTION> ${jd} </ END JOB DESCRIPTION>
         {
             "Languages": "C, C++, Java, Python, Dart, Go, JavaScript, Rust, HTML5.",
             "Frameworks": "Angular, ReactJS, Vue.js, Django, Flask, Express.js, Electron.js, Tauri, Flutter, Ionic, Spring Boot.",
             "Technologies": "Docker, Kubernetes, REST, JSON, TypeScript, GenAI, Selenium, BS4, FastAPI.",
-            "Developer Tools": "Git, Docker, Google Cloud Platform, AWS, Firecracker, Kubernetes, QEMU, Redis, Agile, SCRUM, Linux, JIRA",
-            "Database": "MongoDB, PostgreSQL, Oracle, MySQL, MariaDB, Firebase, D-Graph, SQLite"
+            "Developer Tools": "Git, GraphQL, Docker, Google Cloud Platform, Amazon Web Services, Firecracker, Kubernetes, Redis, Agile, SCRUM, Linux, JIRA",
+            "Database": "MongoDB, PostgreSQL, Oracle, MySQL, Firebase, SQLite"
         }
-        Note: Do not remove the above-mentioned skills. Only add newly identified skills.
+        Note: Do not remove the above-mentioned skills. Only add newly identified skills. Do not generate nested JSON, The key should be a string mainly category and value should be the skills relevant to that category in string format. Strictly Follow above json format
         Ensure no duplicate skills and classify them correctly. If the skills do not fit into existing categories, create new categories.
         Return the response in JSON format.
     `;
@@ -68,6 +70,10 @@ ${generatedSkills}
     }
 }
 
+function getResumeOutputFile(companyName: string): string {
+    return `${process.env.CLDIRPATH || ''}${removeExtraSpaces(companyName)}/${removeExtraSpaces(companyName)}-ashutosh-kumbhar-resume.pdf`;
+}
+
 export const resumeController = async (req: Request, res: Response): Promise<void> => {
     console.log('Generating skills for resume');
     try {
@@ -89,16 +95,19 @@ export const resumeController = async (req: Request, res: Response): Promise<voi
 
         const outputPath = await updateTechnicalSkillsSection(
             process.env.RESUMELATEXPATH || '',
-            `${process.env.CLDIRPATH || ''}${removeExtraSpaces(companyName)}/${removeExtraSpaces(companyName)}.tex`,
+            `${process.env.CLDIRPATH || ''}${removeExtraSpaces(companyName)}/${removeExtraSpaces(companyName)}-resume.tex`,
             skillsJson
         );
 
         if (!outputPath) {
             res.status(500).json({ error: true, message: 'Failed to update LaTeX file' });
-            return ;
+            return;
         }
-
-        await convertToPDF(outputPath, process.env.CLDIRPATH || '', removeExtraSpaces(companyName));
+        try {
+            await convertLatexToPdf(outputPath, getResumeOutputFile(companyName));
+        } catch (error) {
+            console.log("Error Generating PDF from tex file: ", error);
+        }
         res.status(200).json({ error: false, message: 'Skills updated successfully', skills: skillsJson });
     } catch (error: any) {
         console.error('Error in resumeController:', error.message);

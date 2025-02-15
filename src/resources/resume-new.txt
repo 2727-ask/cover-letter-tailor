@@ -1,0 +1,132 @@
+MyName: Ashutosh Kumbhar
+Phone Number: +1 623-698-7433 
+Email: akumbha3@asu.edu 
+LinkedIn: linkedin.com/in/ashutosh-kumbhar 
+Github: github.com/2727-ask 
+Address: Tempe, Arizona, USA
+
+<Experience1>
+Software Developer August 2023 – August 2024
+Company Name: Western Union (Full-Time)
+<mywork>
+• Contributed to developing and maintaining the Western Union POS retail application, ensuring seamless
+functionality and performance.
+• Developed Point Of Sale Development Utility, which boosted developer efficiency by 70%.
+• Collaborated in the migration of WUPOS from Apache Tapestry to Angular 14, resulting in a 15% increase in
+revenue, significant improvements in both agent and user experience, and expanded market share through
+modernized front-end architecture.
+• Executed a Test-Driven Development (TDD) strategy within teams using the Playwright framework.
+Software Engineer June 2022 – February 2023
+<mywork/>
+</Experience1>
+<Experience2>
+MindsClik Digital Solutions Part-Time
+<mywork>
+• Developed a white-labeled e-commerce solution, which evolved into a core product offering.
+• Introduced and integrated Flutter as a new application stack, resulting in enhanced performance and increased.
+• Deployed entire microservice infrastructure to Google Cloud Platform using Kubernetes. Leveraged Node.js and Magento Rest API for backend infra development.
+</mywork>
+development productivity.
+</Experience2>
+<Experience3>
+Full-Stack Developer January 2021 – June 2022
+Company Name: LinkCode Technologies (Part-Time)
+<mywork>
+• Designed the architecture for the LinkCode LMS, driving the organization’s digital transformation and resulting in
+a 35% increase in revenue.
+• Managed a team of 10 developers, overseeing the collective development and implementation of the software.
+• Migrated the entire infrastructure to a server-less architecture using AWS Lambda, enhancing scalability and
+cost-efficiency.
+• Implemented Web-RTC for video conferencing, improving real-time communication capabilities.
+• Established CI/CD pipelines with Jenkins, optimizing development workflows and deployment processes.
+<mywork/>
+</Experience3>
+<Experience4>
+Full-Stack Development Intern April 2020 – September 2020
+Company Name: Aitheon (Internship)
+<mywork>
+• Created a no-code application development platform using Visual Studio Web, Node.js, Node-RED, and Vue.js,
+enabling users to create applications without traditional coding.
+• Development of IoT applications leveraging Robot Operating Systems, NVIDIA Jetson Nano, and Code-Studio.
+<mywork/>
+</Experience4>
+
+<Project1>
+Online Compiler Web IDE | Docker, Kubernetes, Redis, Node.js, Angular, Nginx
+• Developed a cloud-based platform supporting over 10+ programming languages, enabling software developers and
+students to perform heavy computation without local hardware.
+• Optimized resource management by deploying an in-house bare-metal server using QEMU and Ngrok, reducing
+infrastructure costs and increasing system reliability.
+• Collaborated with a team to design a highly scalable architecture leveraging containerization technologies like
+Docker and Kubernetes.
+• Improved user experience and streamlined development by implementing CI/CD pipelines and integrating real-time
+collaboration features.
+<Project1/>
+<Project2>
+Diagnostic Center Resource Management System | Vue.js, Electron.js, Firebase, GCP
+• Designed and implemented a web application to manage resources and patient data, boosting productivity by 80%
+for the Unique Diagnostic Center.
+• Integrated Firebase for real-time data synchronization and GCP for cloud-based resource scaling, improving
+performance and availability.
+• Built user-friendly frontend using Vue.js, focusing on responsive design and cross-platform compatibility via
+Electron.js.
+• Collaborated in Agile sprints to deliver regular updates and features, ensuring continuous improvement and meeting
+user requirements.
+<Project2/>
+<Project3>
+Hospital Management System | Django, AWS, REST, PostgreSQL
+• Engineered an emergency resource management system to track real-time availability of hospital beds, vaccines, and
+ventilators during the COVID-19 pandemic.
+• Implemented RESTful APIs using Django, providing efficient data handling and integration with AWS EC2 for
+scalable cloud hosting.
+• Collaborated with healthcare professionals to design intuitive dashboards, making critical information accessible to
+non-technical users.
+• Ensured data integrity and security by incorporating PostgreSQL for robust database management and encryption.
+<Project3/>
+<Project4>
+JSON to TypeScript Converter | JavaScript, HTML5
+• Developed an algorithm from scratch to detect and convert nested JSON objects into corresponding TypeScript
+interfaces, simplifying the workflow for developers.
+• Built the application using Vanilla JavaScript for high compatibility across different browsers without relying on
+external libraries.
+• Enhanced user experience by incorporating real-time validation and error checking, reducing manual effort and
+preventing conversion errors.
+• Collaborated with users to gather feedback and iteratively improve the user interface, delivering a more intuitive
+tool.
+</Project4>
+<Project5>
+Crypto Tracker | Flutter, FlutterFlow, Dart, Firebase, Cloud Firestore
+• Developed a real-time cryptocurrency price tracker using Flutter and Dart, scraping live data via Gecko API and
+web scraping techniques.
+• Stored historical price data in Cloud Firestore and displayed candlestick charts for users to visualize trends and
+patterns.
+• Implemented responsive UI using FlutterFlow, ensuring seamless performance across devices and platforms.
+• Collaborated with a team to integrate Firebase for user authentication and cloud-based data storage, providing a
+secure and scalable backend.
+</Project5>
+<Project6>
+Instagram Video Scraper + Auto YouTube Shorts Uploader | Selenium, BS4, Flutter, FastAPI, GenAI
+• Developed a Python script to automatically scrape Instagram videos while scrolling through reels using Selenium
+and BeautifulSoup.
+• Automated the uploading of videos to YouTube, including generating video tags and metadata using GenAI for
+improved search visibility.
+• Built a cross-platform interface using Flutter, allowing users to configure scraping settings and monitor uploads in
+real-time.
+• Integrated FastAPI to handle backend processes, optimizing task execution and performance.
+</Project6>
+
+<Technical Skills>
+Languages: C, C++, Java, Python, Dart, Go, JavaScript, Rust, HTML5.
+Frameworks: Angular, React, Vue.js, Django, Flask, Express.js, Electron.js, Tauri, Flutter, Ionic, Spring Boot.
+Backbone.js
+Technologies: Docker, Kubernetes, REST, JSON, TypeScript, GenAI, Selenium, BS4, FastAPI.
+Developer Tools: Git, Docker, Google Cloud Platform, AWS, Firecracker, Kubernetes, QEMU, Redis, Agile, Linux.
+Database: MongoDB, PostgreSQL, Oracle, MySQL, MariaDB, Firebase, D-Graph, SQLite.
+<Technical Skills/>
+
+<Education>
+Masters in Software Engineering August 2024 – Current
+Arizona State University
+Bachelors in Computer Science August 2019 – July 2023
+Savitribai Phule Pune university
+<Education/>
